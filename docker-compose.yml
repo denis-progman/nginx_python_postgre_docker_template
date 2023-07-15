@@ -3,10 +3,27 @@ services:
   postgre:
       container_name: postgre-db
       image: postgres:latest
+      restart: always
       volumes:
         - "./storages/postgre:/var/postgre"
+      environment:
+        POSTGRES_PASSWORD: pass
       networks:
         - appnet
+  pg_admin:
+    container_name: postgre-admin
+    image: dpage/pgadmin4
+    depends_on: 
+      - postgre
+    ports:
+      - "5556:80"
+    volumes:
+      - ./storages/pg_admin:/var/lib/pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=pass
+    networks:
+      - appnet
 
   nginx:
     container_name: nginx-server
@@ -30,6 +47,3 @@ services:
 
 networks:
   appnet:
-    
-
-    
