@@ -3,4 +3,5 @@
 .env
 .terraform
 .DS_Store
-./storages/*/*
+./storages/pg_admin/*
+./storages/postgre/*
