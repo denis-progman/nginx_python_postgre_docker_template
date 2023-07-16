@@ -5,3 +5,4 @@
 .DS_Store
 ./storages/pg_admin/*
 ./storages/postgre/*
+./app/__pycache__
