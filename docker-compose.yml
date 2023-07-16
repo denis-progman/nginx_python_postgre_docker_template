@@ -5,7 +5,7 @@ services:
       image: postgres:latest
       restart: always
       volumes:
-        - "./storages/postgre:/var/postgre"
+        - "./storages/postgre:/var/lib/postgresql"
       environment:
         POSTGRES_PASSWORD: pass
       networks:
