@@ -6,6 +6,7 @@ RUN apt-get update -y \
 && apt-get install -y \
 openrc \
 curl
+# pip install python-dotenv flask flask-sqlalchemy Flask-Migrate
 
 RUN pip3 install -r requirements.txt
 
