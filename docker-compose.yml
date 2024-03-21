@@ -26,7 +26,7 @@ services:
       - appnet
 
   nginx:
-    container_name: nginx-server
+    container_name: nginx-server1
     build:
       dockerfile: docker/nginx/Dockerfile
     ports: 
